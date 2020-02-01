@@ -12,8 +12,6 @@ var options = {
   tzid: 'Etc/UTC'
 };
 
-
-
 app.all('/*', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
@@ -23,8 +21,13 @@ app.all('/*', function(req, res, next) {
 app.get('/', (req, res) =>{
     res.send({"data": "Hello!"});
 });
+
 app.get('/getCalendars', (req, res) =>{
     getUsers(res);
+});
+
+app.get('/getEvents', (req, res) =>{
+    getEvents(res);
 });
 
 /**
@@ -33,6 +36,11 @@ app.get('/getCalendars', (req, res) =>{
  * route
  * @param {@} res 
  */
+
+
+getEvents();
+
+
 function getUsers(res){    
     client.listCalendars(options)
     .then(function (response) {
@@ -40,6 +48,21 @@ function getUsers(res){
         res.send(calendars)
     });
 }
+
+function getEvents(res){
+    client.readEvents(options)
+  .then(function (response) {
+      var events = response.events;
+      res.send(events)
+  });
+}
+
+
+// var Calendar = tui.Calendar;
+
+// var calendar = new Calendar('#calendar', {
+   
+// });
 
 
 app.listen( port, () => console.log(`Backend server listening on port ${port}!`) );
