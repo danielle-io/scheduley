@@ -1,7 +1,5 @@
 import * as CronofyElements from "cronofy-elements";
 
-
-
 const request = require('request');
 const express = require('express');
 const app = express();
@@ -34,6 +32,10 @@ app.get('/getEvents', (req, res) =>{
     getEvents(res);
 });
 
+app.get('/getToken', (req, res) =>{
+    getToken(res);
+});
+
 /**
  * @function getUsers - simulates a backend calling a database to get list of
  * users which then gets returned to the frontend that calls through the default
@@ -61,7 +63,52 @@ function getEvents(res){
   });
 }
 
+function getToken(){
+    // client.listCalendars(options)
+    // .then(function (response) {
+    //     var token = response.token;
+    //     res.send(token)
+    // });
 
+    // var jqxhr = $.post( "/v1/element_tokens", function() {
+    //     alert( "success" );
+    //   })
+    //     .done(function() {
+    //       alert( "second success" );
+    //     })
+    //     .fail(function() {
+    //       alert( "error" );
+    //     })
+    //     .always(function() {
+    //       alert( "finished" );
+    //     });
+        
+
+   $.ajax({
+        type: 'POST',
+        ContentType: 'application/json',
+        Authorization: 'Bearer LJF5OlXAk3LkI1paaG77vA3KYMnMa484',
+        url: "/v1/element_tokens",
+        data: {"version": "1", "permissions": ["agenda"], 'subs': ["acc_1234"], 'origin': "http://localhost"
+    },
+        success: function(resultData) { console.log("Save Complete") }
+  });
+
+
+//   saveData.error(function() { alert("Something went wrong"); });
+
+
+    //     POST /v1/element_tokens HTTP/1.1
+
+    // Authorization: Bearer {API_KEY}
+    // Content-Type: application/json
+    // {
+    // "version": "1",
+    // "permissions": ["agenda"],
+    // "subs": ["acc_1234"],
+    // "origin": "http://localhost"
+    // }
+}
 
 
 app.listen( port, () => console.log(`Backend server listening on port ${port}!`) );
