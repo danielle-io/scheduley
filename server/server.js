@@ -1,3 +1,7 @@
+import * as CronofyElements from "cronofy-elements";
+
+
+
 const request = require('request');
 const express = require('express');
 const app = express();
@@ -58,11 +62,6 @@ function getEvents(res){
 }
 
 
-// var Calendar = tui.Calendar;
-
-// var calendar = new Calendar('#calendar', {
-   
-// });
 
 
 app.listen( port, () => console.log(`Backend server listening on port ${port}!`) );
