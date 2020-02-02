@@ -24,15 +24,40 @@
         </div>
       
 
-        <div id ="form" class='container form-button'>
+        <span id ="form" class='container form-button'>
+            
             <div class="form-group">
-                <label for="calKey" class="bmd-label-floating">
-                        Please enter your Google Calendar Key</label>
-                <input type="text" class="form-control" id="calKey">
+                <div class="row" style="width: 100%; margin-left:0px;
+                margin-right:0px; padding-left:0px; padding-right:0px;">
+
+                <div class="col">
+                    <div class="form-group">
+                        <label for="calKey" class="bmd-label-floating">
+                                Please enter your Google email
+                        </label>
+
+                        <input type="text" class="form-control" id="calKey">
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="form-group">
+                        <label for="password" class="bmd-label-floating">
+                            Please enter your password
+                        </label>
+
+                        <input type="text" class="form-control" id="password">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
                 <button id='submit' 
                     class="btn btn-primary btn-raised" >Submit</button>
+                </span>
             </div>
         </div>
+    
 
         <div id ="groups" class='garbage container form-button'>
                 <input type="text" class="form-control" id="groupName">
