@@ -8,10 +8,6 @@
   *zoom: 1;
 }
 
-.garbage{
-  display:'none' !important;
-  visibility:hidden;
-}
 
 .cal-row-fluid:before,
 .cal-row-fluid:after {

@@ -6,11 +6,15 @@
 }
 
 .form-button{
-    display: inline-block !important;
-    justify-content: center;
-    
-
+    justify-content: center !important;
+    align-content: center !important;
+    margin: 0 auto;
 }
+
+.garbage{
+    display: none;
+    /* visibility:hidden; */
+  }
 
 .cal-container{
     padding-left: 5%;
