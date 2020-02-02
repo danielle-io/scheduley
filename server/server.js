@@ -32,6 +32,11 @@ app.get('/getEvents', (req, res) =>{
     getEvents(res);
 });
 
+
+app.get('/getUserInfo', (req, res) =>{
+    getToken(res);
+});
+
 app.get('/getToken', (req, res) =>{
     getToken(res);
 });
@@ -63,7 +68,19 @@ function getEvents(res){
   });
 }
 
-function getToken(){
+// function getUserInfo(){
+//     $.ajax({
+//         type: 'GET',
+//         ContentType: 'application/json',
+//         Authorization: 'Bearer gOdFGD1beUllEtYtFagvM5WRn9atafnc',
+//         url: "https://api.cronofy.com/v1/userinfo",
+//         // data: {"version": "1", "permissions": ["agenda"], 'subs': ["acc_1234"], 'origin': "http://localhost"
+//     },
+//         success: function(resultData) { console.log("Save Complete") }
+//   });
+// }
+
+// function getToken(){
     // client.listCalendars(options)
     // .then(function (response) {
     //     var token = response.token;
@@ -83,32 +100,15 @@ function getToken(){
     //       alert( "finished" );
     //     });
         
-
-   $.ajax({
-        type: 'POST',
-        ContentType: 'application/json',
-        Authorization: 'Bearer LJF5OlXAk3LkI1paaG77vA3KYMnMa484',
-        url: "/v1/element_tokens",
-        data: {"version": "1", "permissions": ["agenda"], 'subs': ["acc_1234"], 'origin': "http://localhost"
-    },
-        success: function(resultData) { console.log("Save Complete") }
-  });
-
-
-//   saveData.error(function() { alert("Something went wrong"); });
-
-
-    //     POST /v1/element_tokens HTTP/1.1
-
-    // Authorization: Bearer {API_KEY}
-    // Content-Type: application/json
-    // {
-    // "version": "1",
-    // "permissions": ["agenda"],
-    // "subs": ["acc_1234"],
-    // "origin": "http://localhost"
-    // }
-}
-
+//    $.ajax({
+//         type: 'POST',
+//         ContentType: 'application/json',
+//         Authorization: 'Bearer LJF5OlXAk3LkI1paaG77vA3KYMnMa484',
+//         url: "https://api.cronofy.com/v1/element_tokens",
+//         data: {"version": "1", "permissions": ["agenda"], 'subs': ["acc_1234"], 'origin': "http://localhost"
+//     },
+//         success: function(resultData) { console.log("Save Complete") }
+//   });
+// }
 
 app.listen( port, () => console.log(`Backend server listening on port ${port}!`) );

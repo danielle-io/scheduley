@@ -2,8 +2,12 @@
 <html lang="en">
     <head>
         <!-- <link rel="stylesheet" href="node_modules/dist/tui-calendar.css"> -->
-
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="../bower_components/bootstrap-calendar/css/calendar.css">
         <link rel="stylesheet" href="stylesheet.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,14 +21,37 @@
         <button onclick="getCalendar();">get cal</button>
         <button onclick="getEvents();">get events</button>
 
-        <div id="cronofy-agenda"></div>
+        <div id ="cal-container">
+            <div id="calendar"></div>
+            <script type="text/javascript" src="../bower_components/jquery/dist/jquery.js"></script>
+            <script type="text/javascript" src="../bower_components/underscore/underscore.js"></script>
+            <script type="text/javascript" src="../bower_components/bootstrap-calendar/js/calendar.js"></script>
+            <script type="text/javascript">
+                var calendar = $("#calendar").calendar(
+                    {
+                        tmpl_path: "../bower_components/bootstrap-calendar/tmpls/",
+                        events_source: [
+                            {
+                                "id": 293,
+                                "title": "Event 1",
+                                "url": "http://example.com",
+                                "class": "event-important",
+                                "start": 1580607789292, // Milliseconds
+                                "end": 1580607795764 // Milliseconds
+                            }
+                        ]
+                }
+                );
+            </script>
+        </div>
+        <!-- <div id="cronofy-agenda"></div>
         <script src="https://elements.cronofy.com/js/CronofyElements.v1.11.0.js"></script>
         <script>
             CronofyElements.Agenda({
-                element_token: "{LJF5OlXAk3LkI1paaG77vA3KYMnMa484}",
+                element_token: "{}",
                 target_id: "cronofy-agenda"
-            });
-</script>
+            }); -->
+<!-- </script> -->
         <!-- <div id="calendar"></div> -->
 
         <!-- <script src="node_modules/dist/tui-calendar.js"></script> -->
