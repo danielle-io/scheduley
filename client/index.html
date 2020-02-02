@@ -26,16 +26,41 @@
       
 
         <div id ="form" class='container form-button'>
-            <div class="form-group">
-                <label for="calKey" class="bmd-label-floating">
-                        Please enter your Google Calendar Key</label>
-                <input type="text" class="form-control" id="calKey">
-                <button id='submit' 
-                    class="btn btn-primary btn-raised" >Submit</button>
-            </div>
-        </div>
+            
+            <!-- <div class="form-group"> -->
+                <div class="row" style="width: 100%;">
 
-        <div id ="groups" class='garbage container form-button'>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="calKey" class="bmd-label-floating">
+                                    Please enter your Google email
+                            </label>
+
+                            <input type="text" class="form-control" id="calKey">
+                        </div>
+                    </div>
+                
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="password" class="bmd-label-floating">
+                                Please enter your password
+                            </label>
+
+                            <input type="text" class="form-control" id="password">
+                        </div>
+                    </div>
+
+                        <div class="col">
+
+                            <button id='submit' 
+                                class="btn btn-primary" style="margin-top: 1.75rem;">Submit
+                            </button>
+                        </div>
+                    </div>                    
+                </div>
+    
+
+        <div id ="groups" class='container form-button garbage'>
                 <input type="text" class="form-control" id="groupName">
                 <button id='join' 
                     class="btn btn-primary disabled btn-raised" >JOIN A GROUP
