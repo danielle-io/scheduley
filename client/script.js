@@ -1,4 +1,4 @@
-getUserInfo()
+// getUserInfo()
 
 function getCalendar(){
     fetch('http://localhost:3000/getCalendars').then(response => response.json()).then(response => {

@@ -7,7 +7,7 @@ const port = 3000;
 var Cronofy = require('cronofy');
 
 var client = new Cronofy({
-  access_token: 'LJF5OlXAk3LkI1paaG77vA3KYMnMa484',
+  access_token: 'Q712k-tPoP9hFSZo49VSTLste1k8eC2p',
 });
 
 var options = {
@@ -20,9 +20,9 @@ app.all('/*', function(req, res, next) {
     next();
 });
 
-app.get('/', (req, res) =>{
-    res.send({"data": "Hello!"});
-});
+// app.get('/', (req, res) =>{
+//     res.send({"data": "Hello!"});
+// });
 
 app.get('/getCalendars', (req, res) =>{
     getUsers(res);
@@ -33,13 +33,13 @@ app.get('/getEvents', (req, res) =>{
 });
 
 
-app.get('/getUserInfo', (req, res) =>{
-    getToken(res);
-});
+// app.get('/getUserInfo', (req, res) =>{
+//     getUserInfo(res);
+// });
 
-app.get('/getToken', (req, res) =>{
-    getToken(res);
-});
+// app.get('/getToken', (req, res) =>{
+//     getToken(res);
+// });
 
 /**
  * @function getUsers - simulates a backend calling a database to get list of
@@ -47,11 +47,6 @@ app.get('/getToken', (req, res) =>{
  * route
  * @param {@} res 
  */
-
-
-getEvents();
-
-
 function getUsers(res){    
     client.listCalendars(options)
     .then(function (response) {
@@ -110,5 +105,9 @@ function getEvents(res){
 //         success: function(resultData) { console.log("Save Complete") }
 //   });
 // }
+
+
+getEvents();
+
 
 app.listen( port, () => console.log(`Backend server listening on port ${port}!`) );
