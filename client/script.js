@@ -34,7 +34,9 @@ $(function() {
                     var calendar = new FullCalendar.Calendar(calendarEl, {
                         plugins: [ 'timeGrid' ],
                         defaultView: 'timeGridWeek',
-                        events: globalCalendar
+                        events: globalCalendar,
+                        minTime: "06:00:00",
+                        maxTime: "22:00:00"
                     });
             
                     calendar.render();
@@ -92,7 +94,9 @@ $(function() {
                             {
                                 googleCalendarId: 't520rbs0es03s180sksph8shds@group.calendar.google.com'
                             }
-                          ]
+                          ],
+                          minTime: "06:00:00",
+                            maxTime: "22:00:00"
                     });
             
                     calendar.render();
