@@ -20,7 +20,7 @@
 }
 .cal-row-fluid [class*="cal-cell"] {
   display: block;
-  width: 100%;
+  width: 60%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
