@@ -2,6 +2,7 @@ let calendarResponse;
 let globalCalendar = [];
 
 $(function() {
+
     document.getElementById("submit").onclick = function loadCal() {
         document.getElementById("cal").classList.remove('collapse');
         // document.getElementById("form").classList.add('collapse');
@@ -48,18 +49,22 @@ $(function() {
         //     console.log(response);
         //   });
         
-        
-
-
+    document.getElementById("join").onclick = function loadCal() {  
+        document.getElementById("groups").classList.add('garbage');
     }
+
+
+    document.getElementById("start").onclick = function loadCal() {  
+        document.getElementById("groups").classList.add('garbage');
+    }
+
     $("#groupName").change(function() {
-        console.log('true')
         document.getElementById("join").classList.remove('disabled');
     });
 
     
     
-
+    }
 
 // loads the event source for the calendar
 // function getCalendarResponse(){
