@@ -9,6 +9,10 @@
   display: none;
 }
 
+.fc-day-grid{
+    display: none !important;
+}
+
 .fc-left {
   display: none !important;
 }
@@ -36,8 +40,12 @@
 }
 
 .cal-container{
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+.fc-unthemed th, .fc-unthemed td, .fc-unthemed thead, .fc-unthemed tbody, .fc-unthemed .fc-divider, .fc-unthemed .fc-row, .fc-unthemed .fc-content, .fc-unthemed .fc-popover, .fc-unthemed .fc-list-view, .fc-unthemed .fc-list-heading td {
+    border-color: #8aa1a2 !important;
 }
 
 .green {
@@ -94,10 +102,21 @@
     font-size: 13px;
     border: none;
   }
-  
+
+  /* .fc-button .fc-icon {
+    vertical-align: middle;
+    font-size: .5em !important;
+}
+   */
+  .fc-button-primary:disabled {
+    display: none !important;
+    color: #fff;
+    background-color: #2C3E50;
+    border-color: #2C3E50;
+}
   
 .header {
-    padding: 2%; /* some padding */
+    margin-top: 2px;
     text-align: center; /* center the text */
     /* background: #A1FFCE;  */
     /* background: -webkit-linear-gradient(to bottom, #FAFFD1, #A1FFCE);  Chrome 10-25, Safari 5.1-6 */

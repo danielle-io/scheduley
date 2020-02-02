@@ -54,6 +54,7 @@ $(function() {
         
     document.getElementById("join").onclick = function loadCal() {  
         document.getElementById("groups").classList.add('garbage');
+        
     }
 
 
