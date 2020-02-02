@@ -33,7 +33,8 @@ $(function() {
     
                     var calendar = new FullCalendar.Calendar(calendarEl, {
                         plugins: [ 'timeGrid' ],
-                        defaultView: 'timeGridWeek'
+                        defaultView: 'timeGridWeek',
+                        events: globalCalendar
                     });
             
                     calendar.render();
