@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="../bower_components/bootstrap-calendar/css/calendar.css">
         <link rel="stylesheet" href="stylesheet.css">
@@ -8,6 +9,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+        
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -16,43 +18,56 @@
     </head>
     
     <body>
-        <!-- <div class="navbar">
-            <a href="#" class="right">Login(?) Info</a>
-        </div> -->
         <div class="header">
             <h1><img class='scaling-images' src="../images/logo2.png" alt="Logo">scheduley</h1>
-            <!-- <p>match your schedules</p> -->
         </div>
-        <!-- <div class="row">
-            <div class="side">Info stuffs?</div>
-            <div class="main">The calendar maybe</div>
-        </div> -->
-        <div class="cal-container">
-            
-            <div id="calendar"></div>
+      
 
-            <script type="text/javascript" src="../bower_components/jquery/dist/jquery.js"></script>
-            <script type="text/javascript" src="../bower_components/underscore/underscore.js"></script>
-            <script type="text/javascript" src="../bower_components/bootstrap-calendar/js/calendar.js"></script>
-            <script type="text/javascript">
-
-                var calendar = $("#calendar").calendar(
-                    {
-                        tmpl_path: "../bower_components/bootstrap-calendar/tmpls/",
-                        events_source: [
-                            {
-                                "id": 293,
-                                "title": "Event 1",
-                                "url": "http://example.com",
-                                "class": "event-important",
-                                "start": 1580607789292, // Milliseconds
-                                "end": 1580607795764 // Milliseconds
-                            }
-                        ]
-                    }
-                );
-            </script>
+        <div class='container'>
+            <form class='form-inline'>
+                <div class="form-group">
+                <label for="exampleInputEmail1" class="bmd-label-floating">
+                        Please enter your Google Calendar Key</label>
+                <input type="email" class="form-control" id="exampleInputEmail1">
+                <button type="submit" style='padding-left:5px !important;' class="btn btn-primary btn-raised">Submit</button>
+                </div>
+            </form>
         </div>
+
+        <div class='collapse'>
+            <div class="cal-container">
+                
+                <div id="calendar"></div>
+
+                <script type="text/javascript" src="../bower_components/jquery/dist/jquery.js"></script>
+                <script type="text/javascript" src="../bower_components/underscore/underscore.js"></script>
+                <script type="text/javascript" src="../bower_components/bootstrap-calendar/js/calendar.js"></script>
+                <script type="text/javascript">
+
+                    var calendar = $("#calendar").calendar(
+                        {
+                            tmpl_path: "../bower_components/bootstrap-calendar/tmpls/",
+                            events_source: [
+                                {
+                                    "id": 293,
+                                    "title": "Event 1",
+                                    "url": "http://example.com",
+                                    "class": "event-important",
+                                    "start": 1580607789292, // Milliseconds
+                                    "end": 1580607795764 // Milliseconds
+                                }
+                            ]
+                        }
+                    );
+                </script>
+            </div>
+
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+        <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
 
         <!-- <button onclick="getCalendar();">get cal</button>
 
