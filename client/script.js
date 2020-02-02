@@ -1,6 +1,7 @@
 let calendarResponse;
-window.onload = function() {
+let globalCalendar = [];
 
+$(function() {
     document.getElementById("submit").onclick = function loadCal() {
         document.getElementById("cal").classList.remove('collapse');
         // document.getElementById("form").classList.add('collapse');
@@ -17,22 +18,43 @@ window.onload = function() {
 
         fetch(url).then(response => response.json()).then(response => {
             // console.log(JSON.stringify(response));
-            calendarResponse = parseCalendarResponse(response);
-            
-        })
+            globalCalendar = parseCalendarResponse(response);
+            return globalCalendar;
+        }).then((globalCalendar) => {
+            let calendar = $("#calendar").calendar(
+                {
+                    tmpl_path: "../bower_components/bootstrap-calendar/tmpls/",
+                    events_source: globalCalendar
+                }
+            );
+        });
     }
     $("#groupName").change(function() {
         console.log('true')
         document.getElementById("join").classList.remove('disabled');
     });
+
     
-}
-let calendar = $("#calendar").calendar(
-    {
-        tmpl_path: "../bower_components/bootstrap-calendar/tmpls/",
-        events_source: calendarResponse
-    }
-);
+    
+
+
+// loads the event source for the calendar
+// function getCalendarResponse(){
+//     var calKeyValue = document.getElementById('calKey').value;
+
+//     prefix = 'https://www.googleapis.com/calendar/v3/calendars/'
+
+//     var url = prefix + calKeyValue + '/events?key=AIzaSyAzSkGZ7YtaaepNA-r_g7glspLmct-avfs'
+
+//     fetch(url).then(response => response.json()).then(response => {
+//         // console.log(JSON.stringify(response));
+//         globalCalendar = parseCalendarResponse(response);
+        
+//     });
+//     return calendarResponse;
+// }
+
+
 
 // function getToken(){
 //     fetch('http://localhost:3000/getToken').then(response => response.json()).then(response => {
@@ -84,5 +106,5 @@ function parseCalendarResponse(calendarData) {
 }
 
 
-
+});
 
