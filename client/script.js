@@ -106,7 +106,24 @@ $(function() {
 
 
     document.getElementById("start").onclick = function loadCal() {  
-        document.getElementById("groups").classList.add('garbage');
+        var calendarEl = document.getElementById('calendar');
+                $('#calendar').html('');
+
+                var calendar = new FullCalendar.Calendar(calendarEl, {
+                    plugins: [ 'timeGrid', 'googleCalendar' ],
+                    defaultView: 'timeGridWeek',
+                    googleCalendarApiKey: 'AIzaSyAzSkGZ7YtaaepNA-r_g7glspLmct-avfs',
+                    eventSources: [
+                        {
+                            googleCalendarId: '2r8ke5q0h5msbiu997l15t4u6g@group.calendar.google.com',
+                            className: 'nice-event'
+                        }
+                        ],
+                        minTime: "06:00:00",
+                        maxTime: "22:00:00"
+                });
+        
+                calendar.render();
     }
 
     $("#groupName").change(function() {
