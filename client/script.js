@@ -3,7 +3,7 @@ let globalCalendar = [];
 
 $(function() {
     document.getElementById("submit").onclick = function loadCal() {
-        document.getElementById("cal").classList.remove('collapse');
+        document.getElementById("calendar").classList.remove('hide');
         // document.getElementById("form").classList.add('collapse');
         
         document.getElementById("form").classList.add('garbage');
@@ -28,12 +28,14 @@ $(function() {
                     globalCalendar = parseCalendarResponse(response);
                     return globalCalendar;
                 }).then((globalCalendar) => {
-                    let calendar = $("#calendar").calendar(
-                        {
-                            tmpl_path: "../bower_components/bootstrap-calendar/tmpls/",
-                            events_source: globalCalendar
-                        }
-                    );
+                    var calendarEl = document.getElementById('calendar');
+    
+                    var calendar = new FullCalendar.Calendar(calendarEl, {
+                        plugins: [ timeGridPlugin ],
+                        defaultView: 'timeGridWeek'
+                    });
+            
+                    calendar.render();
                 });
           });
 

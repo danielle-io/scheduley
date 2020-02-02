@@ -5,6 +5,10 @@
     pointer-events: none;
 }
 
+.hide {
+  display: none;
+}
+
 .bmd-form-group .bmd-label-static, .bmd-form-group.is-filled .bmd-label-floating, .bmd-form-group .is-filled .bmd-label-floating, .bmd-form-group.is-focused .bmd-label-floating, .bmd-form-group .is-focused .bmd-label-floating {
     top: .7rem;
     left: 0;
