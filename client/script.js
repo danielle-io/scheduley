@@ -8,27 +8,49 @@ $(function() {
         
         document.getElementById("form").classList.add('garbage');
         document.getElementById("groups").classList.remove('garbage');
-
-
         var username = document.getElementById('calKey').value;
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "http://localhost:3000/schedule?user=dmuhlenb@uci.edu",
+            "method": "GET"
+          }
+          
+          $.ajax(settings).done(function (response) {
+                let calendarId = response.calendarID;
+                        // send username to db and get back cal id & set to
+                prefix = 'https://www.googleapis.com/calendar/v3/calendars/'
 
-        // send username to db and get back cal id & set to
-        prefix = 'https://www.googleapis.com/calendar/v3/calendars/'
+                var url = prefix + calendarId + '/events?key=AIzaSyAzSkGZ7YtaaepNA-r_g7glspLmct-avfs'
 
-        var url = prefix + username + '/events?key=AIzaSyAzSkGZ7YtaaepNA-r_g7glspLmct-avfs'
+                fetch(url).then(response => response.json()).then(response => {
+                    // console.log(JSON.stringify(response));
+                    globalCalendar = parseCalendarResponse(response);
+                    return globalCalendar;
+                }).then((globalCalendar) => {
+                    let calendar = $("#calendar").calendar(
+                        {
+                            tmpl_path: "../bower_components/bootstrap-calendar/tmpls/",
+                            events_source: globalCalendar
+                        }
+                    );
+                });
+          });
 
-        fetch(url).then(response => response.json()).then(response => {
-            // console.log(JSON.stringify(response));
-            globalCalendar = parseCalendarResponse(response);
-            return globalCalendar;
-        }).then((globalCalendar) => {
-            let calendar = $("#calendar").calendar(
-                {
-                    tmpl_path: "../bower_components/bootstrap-calendar/tmpls/",
-                    events_source: globalCalendar
-                }
-            );
-        });
+        // var settings = {
+        //     "async": true,
+        //     "crossDomain": true,
+        //     "url": "http://localhost:3000/schedule?user="+username,
+        //     "method": "GET"
+        //   }
+          
+        //   $.ajax(settings).done(function (response) {
+        //     console.log(response);
+        //   });
+        
+        
+
+
     }
     $("#groupName").change(function() {
         console.log('true')
