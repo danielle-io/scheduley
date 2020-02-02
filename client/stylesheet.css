@@ -21,6 +21,15 @@
     padding-right: 5%;
 }
 
+.green {
+    color: rgb(98, 165, 173);
+  }
+
+.green:hover {
+    background-color: #61e3ec;;
+    color: white;
+  }
+
 .form-inline{
     justify-content: center;
 }
@@ -43,6 +52,31 @@
     background-image: none;
 }
 
+.button {
+    background-color: white;
+    /* width: 30%;
+    height: 30%; */
+    /* color: green !important; */
+    display: inline-block;
+    margin: 0.1em;
+    padding: .5em .3em;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 3px;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.5);
+    font-size: 13px;
+    border: none;
+  }
+  
+  
 .header {
     padding: 2%; /* some padding */
     text-align: center; /* center the text */
@@ -53,7 +87,7 @@
   }
 
 .header h1 {
-    font-size: 40px;
+    font-size: 45px;
     font-weight: 10;
     letter-spacing: 2px;
     color:white;
@@ -66,12 +100,12 @@
     font-weight: 10;
 }
 
-.button {
+/* .button {
     font-family: "Andale Mono", monospace;
     font-size: 20px;
     font-weight: 10;
     letter-spacing: 5px;
-}
+} */
 
 * {
     box-sizing: border-box;
@@ -96,16 +130,7 @@
     text-decoration: none; 
   } */
 
-  .button {
-    /* background-color: #4CAF50;  */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-  }
+  
 
 
   .navbar a.right {
