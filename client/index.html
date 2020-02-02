@@ -5,7 +5,6 @@
         <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <!-- <link rel="stylesheet" href="../bower_components/bootstrap-calendar/css/calendar.css"> -->
         <link rel="stylesheet" href="stylesheet.css">
         <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -15,29 +14,13 @@
         <link href='../node_modules/@fullcalendar/core/main.css' rel='stylesheet' />
         <link href='../node_modules/@fullcalendar/daygrid/main.css' rel='stylesheet' />
         <link href='../node_modules/@fullcalendar/timegrid/main.css' rel='stylesheet' />
-        <!-- <link href='../node_modules/@fullcalendar/google-calendar/main.css' rel='stylesheet' /> -->
     
         <script src='../node_modules/@fullcalendar/core/main.js'></script>
         <script src='../node_modules/@fullcalendar/daygrid/main.js'></script>
-        <!-- <script src='../node_modules/@fullcalendar/timegrid/main.js'></script> -->
-
         <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous"></script>
-    
-        <script>
-    
-        //   document.addEventListener('DOMContentLoaded', function() {
-        //     var calendarEl = document.getElementById('calendar');
-    
-        //     var calendar = new FullCalendar.Calendar(calendarEl, {
-        //       plugins: [ 'dayGrid' ]
-        //     });
-    
-        //     calendar.render();
-        //   });
-    
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous">
         </script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -120,11 +103,9 @@
                
         </div>
 
-     <!-- <div id='cal' class='collapse'> -->
     <div class="cal-container"> 
                 
         <div id="calendar" class="hide"></div>
-                <!-- <script type="text/javascript" src="../bower_components/jquery/dist/jquery.js"></script> -->
                 <script type="text/javascript">
                     jQuery.loadScript = function (url, callback) {
                         jQuery.ajax({
@@ -134,29 +115,17 @@
                             async: true
                         }); 
                     }
-
-                    // $.loadScript('../bower_components/jquery/dist/jquery.js');
-                    // $.loadScript('../bower_components/underscore/underscore.js');
-                    // $.loadScript('../bower_components/bootstrap-calendar/js/calendar.js');
                     $.loadScript('../node_modules/@fullcalendar/timegrid/main.js');
                     $.loadScript('../node_modules/@fullcalendar/google-calendar/main.js');
                     $.loadScript('./script.js');
                 
                 </script>
-                <!-- 
-                <script type="text/javascript" src="../bower_components/underscore/underscore.js"></script>
-                <script type="text/javascript" src="../bower_components/bootstrap-calendar/js/calendar.js"></script> -->
-                
-                <!-- <script src="./bundle.js"></script> -->
-               
-
-        </div>
+            </div>
 
         
         <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
         
-        <!-- <script type="text/javascript" src="script.js"></script> -->
         <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
     </body>
 </html>
