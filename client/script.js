@@ -13,7 +13,7 @@ $(function() {
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": "http://localhost:3000/schedule?user=dmuhlenb@uci.edu",
+            "url": "http://localhost:3000/schedule?user="+username,
             "method": "GET"
           }
           
@@ -53,7 +53,51 @@ $(function() {
         //   });
         
     document.getElementById("join").onclick = function loadCal() {  
-        document.getElementById("groups").classList.add('garbage');
+        // document.getElementById("groups").classList.add('garbage');
+        // var username = document.getElementById('calKey').value;
+        // var settings = {
+        //     "async": true,
+        //     "crossDomain": true,
+        //     "url": "http://localhost:3000/schedule?user="+username,
+        //     "method": "GET"
+        //   }
+          
+        //   $.ajax(settings).done(function (response) {
+        //         let calendarId = response.calendarID;
+        //                 // send username to db and get back cal id & set to
+        //         prefix = 'https://www.googleapis.com/calendar/v3/calendars/'
+
+        //         var url = prefix + calendarId + '/events?key=AIzaSyAzSkGZ7YtaaepNA-r_g7glspLmct-avfs'
+
+        //         fetch(url).then(response => response.json()).then(response => {
+        //             // console.log(JSON.stringify(response));
+        //             globalCalendar = parseCalendarResponse(response);
+        //             return globalCalendar;
+        //         }).then((globalCalendar) => {
+                    var calendarEl = document.getElementById('calendar');
+                    $('#calendar').html('');
+    
+                    var calendar = new FullCalendar.Calendar(calendarEl, {
+                        plugins: [ 'timeGrid', 'googleCalendar' ],
+                        defaultView: 'timeGridWeek',
+                        googleCalendarApiKey: 'AIzaSyAzSkGZ7YtaaepNA-r_g7glspLmct-avfs',
+                        eventSources: [
+                            {
+                              googleCalendarId: 'vggugcc53gtuvurvfrhjqhnfa8@group.calendar.google.com'
+                            },
+                            {
+                              googleCalendarId: '2r8ke5q0h5msbiu997l15t4u6g@group.calendar.google.com',
+                              className: 'nice-event'
+                            },
+                            {
+                                googleCalendarId: 't520rbs0es03s180sksph8shds@group.calendar.google.com'
+                            }
+                          ]
+                    });
+            
+                    calendar.render();
+                // });
+        //   });
     }
 
 

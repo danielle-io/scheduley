@@ -31,8 +31,6 @@ app.get('/schedule', function(req, res) {
         var dbo = db.db("test");
         dbo.collection("GroupSchedules").findOne({'schedArray.schedules.userID':userId}, function(err, result) {
             if (err) throw err;
-        
-            console.log(result['schedArray'])
             let schedules = result['schedArray'][0]['schedules'];
             for (let i = 0; i < schedules.length; i++) {
                 if (schedules[i]['userID'] == userId) {
