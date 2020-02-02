@@ -1,8 +1,125 @@
-h1{
+/* h1{
     justify-content: center;
-}
+} */
 
 .cal-container{
     padding-left: 5%;
     padding-right: 5%;
 }
+
+.scaling-images{
+    max-width: 10%;
+}
+
+/* .img {
+    position: absolute;
+    top: 13px;
+    left: 20px;
+} */
+
+.header {
+    padding: 2%; /* some padding */
+    text-align: center; /* center the text */
+    /* background: #A1FFCE;  */
+    /* background: -webkit-linear-gradient(to bottom, #FAFFD1, #A1FFCE);  Chrome 10-25, Safari 5.1-6 */
+    /* background: linear-gradient(to bottom, #FAFFD1, #A1FFCE); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: black; /* text color */
+  }
+
+.header h1 {
+    font-size: 40px;
+    font-family: "Andale Mono", monospace;
+    font-weight: 10;
+    letter-spacing: 5px
+  }
+  
+.header p {
+    font-size: 15px;
+    font-family: "Andale Mono", monospace;
+    font-weight: 10;
+}
+
+.button {
+    font-family: "Andale Mono", monospace;
+    font-size: 20px;
+    font-weight: 10;
+    letter-spacing: 5px;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+/* .navbar {
+    overflow: hidden; 
+    background-color: #333; 
+}
+   */
+  /* .navbar a {
+    float: left; 
+    display: block; 
+    color: white; 
+    text-align: center; 
+    padding: 36px 20px; 
+    text-decoration: none; 
+  } */
+
+  .button {
+    /* background-color: #4CAF50;  */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+
+  .navbar a.right {
+    font-family: "Andale Mono", monospace;
+    float: right; /* Float a link to the right */
+  }
+  
+  /* .navbar a:hover {
+    background-color: rgb(241, 234, 234); 
+    color: black; 
+  } */
+
+  .side {
+    flex: 30%; 
+    background-color: #333; 
+    font-family: "Andale Mono", monospace;
+    padding: 20px; 
+    color: white;
+  }
+  
+  /* Main column */
+  .main {
+    flex: 70%; 
+    background-color: white; 
+    font-family: "Andale Mono", monospace;
+    padding: 20px; 
+  }
+
+/* .footer {
+    padding: 20px; 
+    text-align: center; 
+    background: #333; 
+} */
+
+body{
+    /* background: #A1FFCE;  /* fallback for old browsers */
+    background: rgb(161,255,206);
+    background: radial-gradient(circle, rgba(161,255,206,1) 0%, rgba(0,212,255,1) 100%); 
+
+    /* background: rgb(255,191,219);
+    background: radial-gradient(circle, rgba(255,191,219,1) 6%, rgba(228,164,224,1) 92%); */
+    /* background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(233,148,228,1) 100%); */
+  }

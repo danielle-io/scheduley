@@ -23,6 +23,7 @@ Date.prototype.getWeek = function(iso8601) {
 		return Math.ceil((((this.getTime() - onejan.getTime()) / 86400000) + onejan.getDay() + 1) / 7);
 	}
 };
+
 Date.prototype.getMonthFormatted = function() {
 	var month = this.getMonth() + 1;
 	return month < 10 ? '0' + month : month;
