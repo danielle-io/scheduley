@@ -6,7 +6,10 @@
   "dependencies": {
     "cronofy-elements": "^1.11.0",
     "googleapis": "^39.2.0",
+    "mongo": "^0.1.0",
     "mongodb": "^3.5.2",
+    "mongodb-client-encryption": "^1.0.1",
+    "requirejs": "^2.3.6",
     "tui-calendar": "^1.12.10"
   },
   "devDependencies": {},

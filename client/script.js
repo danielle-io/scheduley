@@ -9,12 +9,13 @@ $(function() {
         document.getElementById("form").classList.add('garbage');
         document.getElementById("groups").classList.remove('garbage');
 
+
         var username = document.getElementById('calKey').value;
 
         // send username to db and get back cal id & set to
         prefix = 'https://www.googleapis.com/calendar/v3/calendars/'
 
-        var url = prefix + calKeyValue + '/events?key=AIzaSyAzSkGZ7YtaaepNA-r_g7glspLmct-avfs'
+        var url = prefix + username + '/events?key=AIzaSyAzSkGZ7YtaaepNA-r_g7glspLmct-avfs'
 
         fetch(url).then(response => response.json()).then(response => {
             // console.log(JSON.stringify(response));
