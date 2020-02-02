@@ -9,12 +9,12 @@
     justify-content: center !important;
     align-content: center !important;
     margin: 0 auto;
+    vertical-align: center !important;
 }
 
 .garbage{
     display: none;
-    /* visibility:hidden; */
-  }
+}
 
 .cal-container{
     padding-left: 5%;
@@ -39,6 +39,10 @@
     left: 20px;
 } */
 
+.custom-file-control, .form-control, .is-focused .custom-file-control, .is-focused .form-control {
+    background-image: none;
+}
+
 .header {
     padding: 2%; /* some padding */
     text-align: center; /* center the text */
@@ -50,11 +54,11 @@
 
 .header h1 {
     font-size: 40px;
-    font-family: "Andale Mono", monospace;
     font-weight: 10;
-    letter-spacing: 5px;
+    letter-spacing: 2px;
     color:white;
-  }
+    font-family: 'Montserrat', sans-serif;
+}
   
 .header p {
     font-size: 15px;
@@ -129,6 +133,10 @@
     font-family: "Andale Mono", monospace;
     padding: 20px; 
   }
+
+  /* .col{
+      margin: 0 auto !important;
+  } */
 
 /* .footer {
     padding: 20px; 

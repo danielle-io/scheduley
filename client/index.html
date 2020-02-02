@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="../bower_components/bootstrap-calendar/css/calendar.css">
         <link rel="stylesheet" href="stylesheet.css">
+        <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -26,50 +29,61 @@
       
 
         <div id ="form" class='container form-button'>
-            
-            <!-- <div class="form-group"> -->
-                <div class="row" style="width: 100%;">
+            <div class="row justify-content-md-center" style="width: 100%;">
 
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="calKey" class="bmd-label-floating">
-                                    Please enter your Google email
-                            </label>
-
-                            <input type="text" class="form-control" id="calKey">
-                        </div>
+                <div class="col-auto">
+                    <div class="form-group">
+                        <label for="calKey" class="bmd-label-floating"
+                            style="margin-left:6px;">
+                                Enter your Google email
+                        </label>
+                        <input type="text" class="form-control" id="calKey">
                     </div>
-                
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="password" class="bmd-label-floating">
-                                Please enter your password
-                            </label>
-
-                            <input type="text" class="form-control" id="password">
-                        </div>
-                    </div>
-
-                        <div class="col">
-
-                            <button id='submit' 
-                                class="btn btn-primary" style="margin-top: 1.75rem;">Submit
-                            </button>
-                        </div>
-                    </div>                    
                 </div>
+            
+                <div class="col-auto">
+                    <div class="form-group">
+                        <label for="password" class="bmd-label-floating"
+                            style="margin-left:6px;">
+                            Enter your password
+                        </label>
+
+                        <input type="text" class="form-control" id="password">
+                    </div>
+                </div>
+
+                <div class="col-auto">
+
+                    <button id='submit' 
+                        class="btn btn-primary" style="margin-top: 1.75rem;">Submit
+                    </button>
+                </div>
+            </div>                    
+        </div>
     
 
         <div id ="groups" class='container form-button garbage'>
-                <input type="text" class="form-control" id="groupName">
-                <button id='join' 
-                    class="btn btn-primary disabled btn-raised" >JOIN A GROUP
-                </button>
-                <button id='start' 
-                    class="btn btn-primary btn-raised" >START A GROUP
-                </button>
-               
+            <div class="row justify-content-md-center">
+                <div class="col-auto">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="groupName">
+                    </div>
+                </div>
+                    
+                <div class="col-auto">
+                    <button id='join' 
+                        class="btn btn-primary btn-raised" style="margin-top: 1.75rem;" >JOIN A GROUP
+                    </button>
+                </div>  
+
+                <div class="col-auto">
+                    <button id='start' 
+                        class="btn btn-primary btn-raised" style="margin-top: 1.75rem;" >START A GROUP
+                    </button>
+
+                </div>
             </div>
+               
         </div>
 
         <div id='cal' class='collapse'>
