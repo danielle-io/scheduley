@@ -3,7 +3,13 @@ const app = express()
 const port = 3000
 
 const {MongoClient} = require('mongodb');
+const cors = require('cors')
 
+var corsOptions = {
+  origin: '*',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204 
+}
+app.use(cors(corsOptions));
 
 app.get('/', function(req, res){
     main().catch(console.error);
@@ -13,17 +19,33 @@ app.get('/', function(req, res){
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
 app.get('/schedule', function(req, res) {
-    let userId = req.param('user');
+    let userId = req.param('user').toLowerCase();
     console.log(userId);
     var MongoClient = require('mongodb').MongoClient;
     var url = "mongodb+srv://dbUser:8ojUpKyoLhDsabHr@scheduley-l3rwo.gcp.mongodb.net/test?retryWrites=true&w=majority";
+
+    let resultObject = {};
 
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;
         var dbo = db.db("test");
         dbo.collection("GroupSchedules").findOne({'schedArray.schedules.userID':userId}, function(err, result) {
             if (err) throw err;
-            console.log(result);
+        
+            console.log(result['schedArray'])
+            let schedules = result['schedArray'][0]['schedules'];
+            for (let i = 0; i < schedules.length; i++) {
+                if (schedules[i]['userID'] == userId) {
+                    resultObject['calendarID'] = schedules[i]['calendarID'];
+                    resultObject['displayID'] = schedules[i]['displayID'];
+                }
+            }
+            if (typeof resultObject.calendarID === "undefined") {
+                resultObject['calendarID'] = "none";
+                resultObject['displayID'] = "none";
+            }
+            
+            res.send(resultObject);
         });
     });
      /**
