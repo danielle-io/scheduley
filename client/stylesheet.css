@@ -1,6 +1,15 @@
 /* h1{
     justify-content: center;
 } */
+.disabled{
+    pointer-events: none;
+}
+
+.form-button{
+    display: inline-block !important;
+    justify-content: center;
+
+}
 
 .cal-container{
     padding-left: 5%;
