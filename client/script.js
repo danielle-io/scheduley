@@ -9,7 +9,7 @@ $(function() {
         document.getElementById("form").classList.add('garbage');
         document.getElementById("groups").classList.remove('garbage');
 
-        var calKeyValue = document.getElementById('calKey').value;
+        let calKeyValue = document.getElementById('calKey').value;
 
 
         prefix = 'https://www.googleapis.com/calendar/v3/calendars/'
