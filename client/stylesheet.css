@@ -5,6 +5,10 @@
     pointer-events: none;
 }
 
+.form-user{
+    margin-top: 5% !important;
+}
+
 .form-button{
     justify-content: center !important;
     align-content: center !important;
