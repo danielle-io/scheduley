@@ -30,7 +30,6 @@ async function listDatabases(client){
   
     console.log("Databases:");
     console.log(databasesList);
-    // databasesList.databases.forEach(db => console.log(- ${db.name}));
 };
 
 main().catch(console.error);
