@@ -19,7 +19,7 @@ $(function() {
                 let displayId = response.displayID;
                 prefix = 'https://www.googleapis.com/calendar/v3/calendars/'
 
-                var url = prefix + calendarId + '/events?key=AIzaSyAzSkGZ7YtaaepNA-r_g7glspLmct-avfs'
+                var url = prefix + calendarId + '/events?key=' + CalendarKey
 
                 fetch(url).then(response => response.json()).then(response => {
                     globalCalendar = parseCalendarResponse(response,displayId);
@@ -45,19 +45,19 @@ $(function() {
                     var calendar = new FullCalendar.Calendar(calendarEl, {
                         plugins: [ 'timeGrid', 'googleCalendar' ],
                         defaultView: 'timeGridWeek',
-                        googleCalendarApiKey: 'AIzaSyAzSkGZ7YtaaepNA-r_g7glspLmct-avfs',
+                        googleCalendarApiKey: GoogleCalApiKey,
                         eventSources: [
                             {
-                              googleCalendarId: 'vggugcc53gtuvurvfrhjqhnfa8@group.calendar.google.com',
+                              googleCalendarId: CalendarId1,
                               className: 'class-one'
 
                             },
                             {
-                              googleCalendarId: '2r8ke5q0h5msbiu997l15t4u6g@group.calendar.google.com',
+                              googleCalendarId: CalendarId2,
                               className: 'nice-event'
                             },
                             {
-                                googleCalendarId: 't520rbs0es03s180sksph8shds@group.calendar.google.com',
+                                googleCalendarId: CalendarId3,
                                 className: 'class-two'
                             }
                           ],
@@ -76,10 +76,10 @@ $(function() {
                 var calendar = new FullCalendar.Calendar(calendarEl, {
                     plugins: [ 'timeGrid', 'googleCalendar' ],
                     defaultView: 'timeGridWeek',
-                    googleCalendarApiKey: 'AIzaSyAzSkGZ7YtaaepNA-r_g7glspLmct-avfs',
+                    googleCalendarApiKey: GoogleCalApiKey',
                     eventSources: [
                         {
-                            googleCalendarId: '2r8ke5q0h5msbiu997l15t4u6g@group.calendar.google.com',
+                            googleCalendarId: GroupCalendarId,
                             className: 'nice-event'
                         }
                         ],
