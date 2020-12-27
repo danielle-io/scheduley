@@ -22,7 +22,7 @@ app.get('/schedule', function(req, res) {
     let userId = req.param('user').toLowerCase();
     console.log(userId);
     var MongoClient = require('mongodb').MongoClient;
-    var url = "mongodb+srv://dbUser:8ojUpKyoLhDsabHr@scheduley-l3rwo.gcp.mongodb.net/test?retryWrites=true&w=majority";
+    var url = MongoUrl;
 
     let resultObject = {};
 
